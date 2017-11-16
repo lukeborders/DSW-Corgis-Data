@@ -10,6 +10,6 @@ html {
   display: inline-block;
 }
 .nav li {
-  
+  list-style: none;                          
 }
 
