@@ -8,7 +8,7 @@ div#content {
 .list-contmethod{
   float: center;
 }
-image {
+#out-image {
   height: 45px;
   width:60px;
 }
