@@ -5,6 +5,11 @@ html {
   background-color: rgba(41, 59, 89)
 }
 .nav {
-  height = 45px;
-  background-color=""
+  height: 45px;
+  background-color: #8699b7;
+  display: inline-block;
 }
+.nav li {
+  
+}
+
