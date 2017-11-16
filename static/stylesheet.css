@@ -4,4 +4,7 @@ html {
 .nav navbar-nav li {
   display: inline-block;
 }
+div#content {
+  padding: 10px;
+}
 
