@@ -1,15 +1,7 @@
 html {
   background-color: #669eba
 }
-.list {
-  background-color: rgba(41, 59, 89)
-}
-.nav {
-  height: 45px;
-  background-color: #8699b7;
+.nav navbar-nav li {
   display: inline-block;
-}
-.nav li {
-  list-style: none;                          
 }
 
