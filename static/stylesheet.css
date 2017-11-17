@@ -1,10 +1,4 @@
 
-.nav navbar-nav li {
-  display: inline-block;
-}
-div#content {
-  padding: 10px;
-}
 .list-contmethod{
   float: center;
 }
@@ -12,6 +6,19 @@ div#content {
   height: 45px;
   width:60px;
 }
+.nav {
+	background-color: #6a88a5;
+}
+.nav li  {
+	list-style: none;
+}
+h1 {
+	color: #1d2e3d;
+}
+
+
+
+
 
 
 
