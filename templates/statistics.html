@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='stylesheet.css')}}"/>
+  <script type="text/js" src="script.js"></script>
+  <script type="text/js" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/js" src="canvasjs.min"> </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <title> Index.html </title>
+  </head>
+  <body>
+  <div class="nav">
+  <nav>
+	<ul>
+		<li><b><a href="."> Containment Method's </a></b></li>
+		<li><b><a href="statistics"> Statistics </a></b></li>
+		<li><b><a href="#"> U</a></b></li>
+		<li><b><a href="#"> Doin</a></b></li>
+	</ul>
+   	</nav>
+  </div> 
+	<form action="/selection">
+	<select name="years">
+		{{ years }}
+	</select>
+	<input type="submit" value="Submit" class="btn">
+	</form>
+	<head>
+	<script type="text/javascript">
+	window.onload = function () {
+
+	var chart = new CanvasJS.Chart("chartContainer", {
+		theme: "light2", // "light2", "dark1", "dark2"
+		animationEnabled: true, // change to true		
+		title:{
+			text: "Outbreak Comparison"
+		},
+		data: [
+		{
+			// Change type to "bar", "area", "spline", "pie",etc.
+			type: "column",
+			dataPoints: [
+				{ label: "Measles",  y: {{ measles }}  },
+				{ label: "Polio", y: {{ polio }}  },
+				{ label: "Smallpox", y: {{ smallpox }}  },
+				{ label: "Pertussis",  y: {{ pertussis }}  },
+				{ label: "Hepatitus A",  y: {{ hepatitusa }}  },
+				{ label: "Rubella",  y: {{ rubella }}  },
+				{ label: "Mumps",  y: {{ mumps }}  }
+			]
+		}
+		]
+	});
+		chart.render();
+	
+	}
+	</script>
+	<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+</body>
+</html>
