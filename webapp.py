@@ -20,10 +20,10 @@ def get_options():
 def get_numberz(name):   
     with open('health.json') as health_data:
         data = json.load(health_data)
+    diseaseDict = {}
     fact = 0
     for n in data:
-        if name == n["disease"]:
-            fact += n["number"]
+        diseaseDict[str(n["disease"])] = n["number"]
     return fact
             
 @app.route("/")
