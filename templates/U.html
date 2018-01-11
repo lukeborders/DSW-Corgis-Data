@@ -1,0 +1,31 @@
+ <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='stylesheet.css')}}"/>
+  <script type="text/js" src="script.js"></script>
+  <script type="text/js" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <title> Index.html </title>
+  </head>
+  <body>
+  <div class="nav">
+  <nav>
+	<ul>
+		<li><b><a href="."> Containment Method's </a></b></li>
+		<li><b><a href="statistics"> Statistics </a></b></li>
+		<li><b><a href="U"> U</a></b></li>
+		<li><b><a href="#"> Doin</a></b></li>
+	</ul>
+   	</nav>
+
+  </div>
+  <h1> Select a year and see the percent increase of a disease in that specific year!</h1>
+  <form action="/yes">
+	  <select name="year">
+    		{{yearOpt}}
+  	   </select>
+	   <select name="disease">
+    		{{diseaseOpt}}
+  	   </select>
+	  <input type="submit" value="submit"/>
+	</form>
+	{{ fact }}
+</body>
+</html>  
