@@ -30,18 +30,20 @@ def get_numberz(name,year):
     print(fact)
     return fact
  
-def get_options2(fact):
+def get_options2():
     with open('health.json') as health_data:
         data = json.load(health_data)
     options=""
-    dis = "MEASLES"
+    dis = {}
     for t in data:
         #dank if statement
-        if t["disease"] not in dis:
-            options += Markup("<option value=" + '"' +t["disease"] + '"'+">" + t["disease"] + "</option>")
-        dis = t["disease"] 
-        if dis == t["disease"]:
-            fact += n["number"]
+        if t["disease"] in dis:
+            #options += Markup("<option value=" + '"' +t["disease"] + '"'+">" + t["disease"] + "</option>")
+            #dis = t["disease"]
+            dis[t["disease"]] = dis[t["disease"]] + 1
+        else:
+            dis[t["disease"]] = 1 
+    print(dis)
     return options
     #logang
  
