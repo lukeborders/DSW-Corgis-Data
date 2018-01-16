@@ -34,18 +34,13 @@ def get_options2():
     with open('health.json') as health_data:
         data = json.load(health_data)
     options=""
-    dis = {}
+    dis = []
     for t in data:
-        #dank if statement
-        if t["disease"] in dis:
-            #options += Markup("<option value=" + '"' +t["disease"] + '"'+">" + t["disease"] + "</option>")
-            #dis = t["disease"]
-            dis[t["disease"]] = dis[t["disease"]] + 1
-        else:
-            dis[t["disease"]] = 1 
-    print(dis)
+        if str(t["disease"]) not in dis:
+            dis.append(str(t["disease"]))
+    for c in data:
+        options += Markup("<option value=\"" + c + "\">" + c + "</option>")
     return options
-    #logang
  
 @app.route("/")
 def render_main():
