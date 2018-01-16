@@ -36,10 +36,11 @@ def get_options2():
     options=""
     dis = []
     for t in data:
-        if str(t["disease"]) not in dis:
-            dis.append(str(t["disease"]))
-    for c in data:
-        options += Markup("<option value=\"" + c + "\">" + c + "</option>")
+        if t["disease"] not in dis:
+            dis.append(t["disease"])
+    print(dis)
+    for c in range(0,len(dis)-1):
+        options += Markup("<option value=\"" + dis[c] + "\">" + dis[c] + "</option>")
     return options
  
 @app.route("/")
