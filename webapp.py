@@ -42,7 +42,25 @@ def get_options2():
     for c in range(0,len(dis)-1):
         options += Markup("<option value=\"" + dis[c] + "\">" + dis[c] + "</option>")
     return options
- 
+
+def get_fact(disease , year):
+    with open('health.json') as health_data:
+        data = json.load(health_data)
+    fact = 0
+    numcount = 0
+    for c in data:
+        if disease == c["disease"] and year == c["year"]
+            fact += c["increase"]
+            numcount += 1
+    fact = round(fact/numCount,2)
+    funfact = Markup("<p>" + "Percent Increase of " + disease + " in the year " + year + "is " + str(fact) + " %" + "</p>")
+
+@app.route("/funfact", methods=['GET', 'POST'])
+def render_funfact():
+    year = request.args['year']
+    disease = request.args['disease']
+    return render_template('U.html', fact = get_fact(disease, year))
+
 @app.route("/")
 def render_main():
     return render_template('index.html')
